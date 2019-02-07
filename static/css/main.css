@@ -22,10 +22,22 @@ padding:20px;
 }
 
 a {
-color: #ffffff;
+    color: #ffffff;
 }
 
 a:hover {
-color: #ffffff;
-text-decoration: none;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#index {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }

@@ -2,131 +2,102 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <!-- jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--popper-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <!--javascript-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <!--datatables-->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <!--bootstrap themes-->
-    <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
-    <!--css-->
-    <link rel="stylesheet" href='{{url_for("static", filename="css/main.css")}}'>
-        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <!-- jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--popper-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <!--javascript-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!--datatables-->
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <!--bootstrap themes-->
+  <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
+  <!--css-->
+  <link rel="stylesheet" href='{{url_for("static", filename="css/main.css")}}'>
 </head>
 
 <body>
-
-<!-- navbar -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Phonebook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/person_search">Find a Person</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/business_search">Find a Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/view_all_businesses">View All Businesses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/view_all_people">View All People</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <section id="header">
       <div class="container">
-        <a class="navbar-brand" href="/">Phonebook</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-              <a class="nav-link" href="/person_search">Find a Person</a>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/business_search">Find a Business</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/view_all_businesses">View All Businesses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/view_all_people">View All People</a>
-            </li>
-          </ul>
+        <div>
         </div>
       </div>
-    </nav>
+    </section>
+  </header>
 
-<!--header-->
-<header>
-<section id="header" >
   <div class="container">
-    <div>
-      </div>
-    </div>
-</section>
-</header>
 
-<div class="container">
+    {% block content %}
 
-{% block content %}
-<!--content-->
-
-<h2>Select Search Option</h2>
-
-<div class="container">
-    <button class="home"><a href="/person_search">Find a Person</a></button>
-    <button class="home"><a href="/business_search">Find a Business</a></button>
-    <button class="home"><a href="/view_all_people">View all People</a></button>
-    <button class="home"><a href="/view_all_businesses">View all Businesses</a></button>
-</div>
-    
-<div class="container" id="cards">
-
-<div class="row d-flex justify-content-start">
-    
- <div class="card mt-4 mr-1 ml-1">
-      <div class="card-body">
-        <h5 class="card-title">Find a Person</h5>
-        <a href="/person_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/person.png')}}" alt="Image of a person" max-width="50%"/></a>
-      </div>
-    </div>
-
-            
- <div class="card mt-4 mr-1 ml-1">
-      <div class="card-body">
-        <h5 class="card-title">Find a Business</h5>
-        <a href="/business_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/business.png')}}" alt="Image of a person" max-width="50%"/></a>
+    <h2 id="index">Select Search Option</h2>
+    <div class="container" id="cards">
+      <div class="row d-flex justify-content-start">
+        <div class="card mr-3 ml-3" style="width: 20%">
+          <div class="card-body">
+            <a href="/person_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/person.png')}}" alt="Image of a person" /></a>
+            <h5 class="card-title">Find a Person</h5>
+          </div>
+        </div>
+        <div class="card mr-3 ml-3" style="width: 20%">
+          <div class="card-body">
+            <a href="/business_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/business.png')}}" alt="Image of a person" /></a>
+            <h5 class="card-title">Find a Business</h5>
+          </div>
+        </div>
+        <div class="card mr-3 ml-3" style="width: 20%">
+          <div class="card-body">
+            <a href="/view_all_people"><img class="card-img-top" src="{{url_for('static', filename = 'images/people.png')}}" alt="Image of a person" /></a>
+            <h5 class="card-title">View all People</h5>
+          </div>
+        </div>
+        <div class="card mr-3 ml-3" style="width: 20%">
+          <div class="card-body">
+            <a href="/view_all_businesses"><img class="card-img-top" src="{{url_for('static', filename = 'images/businesses.png')}}" alt="Image of a person" /></a>
+            <h5 class="card-title">View all Businesses</h5>
+          </div>
+        </div>
       </div>
     </div>
 
-  
- <div class="card mt-4 mr-1 ml-1">
-      <div class="card-body">
-        <h5 class="card-title">View all People</h5>
-        <a href="/view_all_people"><img class="card-img-top" src="{{url_for('static', filename = 'images/people.png')}}" alt="Image of a person" max-width="50%"/></a>
-      </div>
-    </div>
-      
-        
- <div class="card mt-4 mr-1 ml-1">
-      <div class="card-body">
-        <h5 class="card-title">View all Businesses</h5>
-        <a href="/view_all_businesses"><img class="card-img-top" src="{{url_for('static', filename = 'images/businesses.png')}}" alt="Image of a person" max-width="50%"/></a>
-      </div>
-    </div>
- 
-</div>
-</div> 
+    {% endblock %}
 
-{% endblock %}    
-
-</div>
-
-<!--datatable-->    
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable();
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable();
     });
-</script>
-
+  </script>
 </body>
 
 </html>

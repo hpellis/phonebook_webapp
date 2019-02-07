@@ -1,56 +1,43 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
-<h2>Find a Business</h2>
+<div class="container">
+  <h2>Find a Business</h2>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+      <div class="jumbotron">
+        <form action="{{url_for('business_search_result') }}" method="post">
+          <table>
+            <tr>
+              <td><label for="business_name">Business Name</label></td>
+              <td><label for="business_category">Business Category</label></td>
+              <td><label for="business_location">Business Location</label></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="business_name"></td>
+              <td>
+                <select name="business_category">
+                  <option value=""></option>
+                  {% for category in categories %}
+                  <option value="{{ category | title }}">{{ category }}</option>
+                  {% endfor %}
+                </select>
+              </td>
 
-    <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12">
-            
-            <div class="jumbotron">
-                <form action="{{url_for('business_search_result') }}" method="post">
-                
-                                
-                <table>
-                
-                    <tr>
-                        <td><label for="business_name">Business Name</label></td>
-                        <td><label for="business_category">Business Category</label></td>
-                        <td><label for="business_location">Business Location</label></td>
-                    </tr>
-                    
-                    <tr>
-                        <td><input type="text" name="business_name"></td>
-                        
-                        <td>
-                            <select name="business_category">
-                                <option value=""></option>
-                            {% for category in categories %}
-                                <option value="{{ category | title }}">{{ category }}</option>
-                            {% endfor %}
-                        </select>
-                        </td>
-                        
-                        <td>
-                            <select name="business_location">
-                                <option value=""></option>
-                            {% for city in cities %}
-                                <option value="{{ city | title }}">{{ city }}</option>
-                            {% endfor %}
-                        </select>
-                        </td>
-                        
-                    </tr>
-                    
-                </table>
-
-                    <button class="btn-large"><input type="submit" value="Search"></button>
-                </form>
-            </div>
-            
-
-        </div>
+              <td>
+                <select name="business_location">
+                  <option value=""></option>
+                  {% for city in cities %}
+                  <option value="{{ city | title }}">{{ city }}</option>
+                  {% endfor %}
+                </select>
+              </td>
+            </tr>
+          </table>
+          <button class="btn-large"><input type="submit" value="Search"></button>
+        </form>
+      </div>
     </div>
-
-
+  </div>
+</div>
 {% endblock %}
