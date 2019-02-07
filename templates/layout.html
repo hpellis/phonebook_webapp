@@ -64,20 +64,61 @@
 </section>
 </header>
 
+<div class="container">
+
 {% block content %}
 <!--content-->
 
 <h2>Select Search Option</h2>
 
 <div class="container">
-    <button class="btn-large home"><a href="/person_search">Find a Person</a></button>
-    <button class="btn-large home"><a href="/business_search">Find a Business</a></button>
-    <button class="btn-large home"><a href="/view_all_people">View all People</a></button>
-    <button class="btn-large home"><a href="/view_all_businesses">View all Businesses</a></button>
+    <button class="home"><a href="/person_search">Find a Person</a></button>
+    <button class="home"><a href="/business_search">Find a Business</a></button>
+    <button class="home"><a href="/view_all_people">View all People</a></button>
+    <button class="home"><a href="/view_all_businesses">View all Businesses</a></button>
 </div>
+    
+<div class="container" id="cards">
+
+<div class="row d-flex justify-content-start">
+    
+ <div class="card mt-4 mr-1 ml-1">
+      <div class="card-body">
+        <h5 class="card-title">Find a Person</h5>
+        <a href="/person_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/person.png')}}" alt="Image of a person" max-width="50%"/></a>
+      </div>
+    </div>
+
+            
+ <div class="card mt-4 mr-1 ml-1">
+      <div class="card-body">
+        <h5 class="card-title">Find a Business</h5>
+        <a href="/business_search"><img class="card-img-top" src="{{url_for('static', filename = 'images/business.png')}}" alt="Image of a person" max-width="50%"/></a>
+      </div>
+    </div>
+
+  
+ <div class="card mt-4 mr-1 ml-1">
+      <div class="card-body">
+        <h5 class="card-title">View all People</h5>
+        <a href="/view_all_people"><img class="card-img-top" src="{{url_for('static', filename = 'images/people.png')}}" alt="Image of a person" max-width="50%"/></a>
+      </div>
+    </div>
+      
+        
+ <div class="card mt-4 mr-1 ml-1">
+      <div class="card-body">
+        <h5 class="card-title">View all Businesses</h5>
+        <a href="/view_all_businesses"><img class="card-img-top" src="{{url_for('static', filename = 'images/businesses.png')}}" alt="Image of a person" max-width="50%"/></a>
+      </div>
+    </div>
+ 
+</div>
+</div> 
 
 {% endblock %}    
 
+</div>
 
 <!--datatable-->    
 <script>
