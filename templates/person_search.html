@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+                <form action="{{url_for('person_search_result') }}" method="post">
+        
+                <table>
+                    <tr>
+                        <td><label for="person_name">Enter Last Name</label></td>
+                    <tr>
+                        <td><input type="text" name="person_name"></td>
+                    </tr>
+                </table>
+                
+                <button class="btn-large"><input type="submit" value="submit"></button>
+                
+                </form>
+ 
+{% endblock %}

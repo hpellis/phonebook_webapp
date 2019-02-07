@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>Postcode</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for person in result %}
+            <tr>
+                <td>{{ person[0] }}</td>
+                <td>{{ person[1] }}</td>
+                <td>{{ person[3] }}</td>
+                <td>{{ person[4] }}</td>
+                <td>{{ person[5] }}</td>
+                <td>{{ person[6] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+{% endblock %}

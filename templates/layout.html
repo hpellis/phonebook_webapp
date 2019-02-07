@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <!--javascript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!--datatables-->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <!--bootstrap themes-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
+    <!--css-->
+    <link rel="stylesheet" href='{{url_for("static", filename="css/main.css")}}'>
+        
+</head>
+
+<body>
+
+<!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Phonebook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+              <a class="nav-link" href="/person_search">Find a Person</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/business_search">Find a Business</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/view_all_businesses">View All Businesses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/view_all_people">View All People</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--header-->
+<header>
+<section id="header" >
+  <div class="container">
+    <div>
+      </div>
+    </div>
+</section>
+</header>
+
+<!--content-->
+<div class="container">
+    {% block content %}
+    <button class="btn-large"><a href="/person_search">Find a Person</a></button>
+    <button class="btn-large"><a href="/business_search">Find a Business</a></button>
+    <button class="btn-large"><a href="/view_all_people">View all People</a></button>
+    <button class="btn-large"><a href="/view_all_businesses">View all Businesses</a></button>
+    {% endblock %}
+</div>
+
+    
+
+
+<!--datatable-->    
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+</body>
+
+</html>
