@@ -64,17 +64,19 @@
 </section>
 </header>
 
+{% block content %}
 <!--content-->
+
+<h2>Select Search Option</h2>
+
 <div class="container">
-    {% block content %}
-    <button class="btn-large"><a href="/person_search">Find a Person</a></button>
-    <button class="btn-large"><a href="/business_search">Find a Business</a></button>
-    <button class="btn-large"><a href="/view_all_people">View all People</a></button>
-    <button class="btn-large"><a href="/view_all_businesses">View all Businesses</a></button>
-    {% endblock %}
+    <button class="btn-large home"><a href="/person_search">Find a Person</a></button>
+    <button class="btn-large home"><a href="/business_search">Find a Business</a></button>
+    <button class="btn-large home"><a href="/view_all_people">View all People</a></button>
+    <button class="btn-large home"><a href="/view_all_businesses">View all Businesses</a></button>
 </div>
 
-    
+{% endblock %}    
 
 
 <!--datatable-->    
