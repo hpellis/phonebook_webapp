@@ -19,11 +19,31 @@ The app is accessible via a front-end interface, which uses Flask to receive use
 * Bootstrap
 
 
+## Installation
+
+Clone the repository.
+
+```$ git clone https://github.com/hpellis/phonebook_webapp```
+
+Navigate to the directory. 
+
+```$ cd phonebook_webapp```
+
+Install Flask.
+
+```$ pip install Flask```
+
+Run the app file.
+
+```$ python phonebook_webapp.py```
+
+Navigate to the local host address in your browswer to see the app running.
+
+
 ![image of table](/final_images/table.png?raw=true "Table")
 
 
 ![image of home page](/final_images/home_page.png?raw=true "Home Page")
-
 
 
 ![image of results page](/final_images/results_page.png?raw=true "Results Page")
